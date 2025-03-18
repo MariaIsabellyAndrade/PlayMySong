@@ -1,0 +1,90 @@
+/* Fundo com gradiente roxo */
+:root{
+    /* Light */
+    --color-light-50: #f8fafc;
+
+    /* Dark */
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+
+    /* Purple */
+    --color-purple-50: #7c38a7;
+    --color-purple-100: #9041c2;
+    --color-purple-200: #AB51E3;
+
+    /* Gradient */
+    --color-gradient: linear-gradient(90deg, var(--color-purple-50), var(--color-purple-100), var(--color-purple-200));
+}
+
+
+.title{
+    color: var(--color-dark-100);
+}
+body {
+    background: var(--color-purple-200);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Centralizando e estilizando o container */
+.container {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilizando o título */
+h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--color-purple-50);
+    margin-bottom: 20px;
+}
+
+/* Personalização do input e botão */
+.input-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.form-control {
+    flex: 1;
+    height: 40px; /* Defina a mesma altura do botão */
+    border: 2px solid #7209b7;
+    border-radius: 10px 0 0 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    height: 40px; /* Mesma altura do input */
+    border-radius: 0 10px 10px 0;
+    padding: 0 20px;
+    font-size: 16px;
+    border: none;
+    background: var(--color-purple-50);
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--color-dark-100);
+}
+
+
+/* Estilizando os resultados */
+#resultados {
+    margin-top: 20px;
+    padding: 5px;
+    background: var(--color-purple-50);
+    border-radius: 10px;
+    min-height: 15px;
+}

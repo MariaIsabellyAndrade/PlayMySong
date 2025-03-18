@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Musica</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/form.css">
+    <script>
+        function validarFormulario() {
+            let nomeMusica = document.getElementById("nomeMusica").value.trim();
+            let artista = document.getElementById("artista").value.trim();
+            let estilo = document.getElementById("estilo").value;
+            let fileInput = document.getElementById("file");
+
+            let regex = /^[a-zA-Z0-9_ ]+$/;
+
+            if (!regex.test(nomeMusica)) {
+                alert("Nome da música inválido! Use apenas letras, números, espaço e underline.");
+                return false;
+            }
+
+            if (!regex.test(artista)) {
+                alert("Nome do artista inválido! Use apenas letras, números, espaço e underline.");
+                return false;
+            }
+
+            if (estilo === "") {
+                alert("Por favor, selecione um estilo musical.");
+                return false;
+            }
+
+            if (fileInput.files.length === 0) {
+                alert("Selecione um arquivo de música antes de enviar.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+
+        <h2 class="text-center">Envio de Musica</h2>
+        <form id="upload_form" action="upload-servlet" method="POST" enctype="multipart/form-data" onsubmit="return validarFormulario();">
+
+            <div class="form-group">
+                <label for="file">Arquivo:</label>
+                <input type="file" class="form-control-file" name="file" id="file" accept="audio/*" required />
+            </div>
+
+            <div class="form-group">
+                <label for="artista">Artista:</label>
+                <input type="text" class="form-control" id="artista" name="artista" placeholder="Digite o nome do artista" required />
+            </div>
+
+            <div class="form-group">
+                <label for="nomeMusica">Música:</label>
+                <input type="text" class="form-control" id="nomeMusica" name="nomeMusica" placeholder="Digite o nome da música" required />
+            </div>
+
+            <div class="form-group">
+                <label for="estilo">Estilo Musical:</label>
+                <select class="form-control" id="estilo" name="estilo" required>
+                    <option value="">Selecione um estilo</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Sertanejo">Sertanejo</option>
+                    <option value="Funk">Funk</option>
+                    <option value="Samba">Samba</option>
+                    <option value="Pagode">Pagode</option>
+                    <option value="Rock">Rock</option>
+                    <option value="HipHop">Hip-Hop</option>
+                    <option value="Eletronico">Eletrônico</option>
+                    <option value="MPB">MPB</option>
+                    <option value="Jazz">Jazz</option>
+                </select>
+            </div>
+
+           <button type="submit" class="btn btn-primary btn-block" >Upload</button>
+            <a href="index.html" class="btn" > <span class="material-icons "><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#1f1f1f"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        </span></a>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+

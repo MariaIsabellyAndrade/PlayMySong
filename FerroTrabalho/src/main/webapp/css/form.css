@@ -1,0 +1,116 @@
+/* Importando fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    /* Light */
+    --color-light-50: #f8fafc;
+
+    /* Dark */
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+
+    /* Purple */
+    --color-purple-50: #7c38a7;
+    --color-purple-100: #9041c2;
+    --color-purple-200: #AB51E3;
+
+    /* Gradient */
+    --color-gradient: linear-gradient(90deg, var(--color-purple-50), var(--color-purple-100), var(--color-purple-200));
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Centralizando o conteúdo */
+body {
+    background: var(--color-gradient);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Centralizando o formulário */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilização do card/formulário */
+.card {
+    background: var(--color-light-50);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Título estilizado */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-purple-100);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(114, 9, 183, 0.5);
+}
+
+/* Campos de entrada */
+.form-group label {
+    font-weight: 600;
+    color: var(--color-purple-200);
+}
+
+.form-control, .form-control-file, select {
+    border-radius: 8px;
+    border: 1px solid var(--color-purple-200);
+    padding: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efeito ao focar nos campos */
+.form-control:focus, select:focus {
+    border-color: var(--color-purple-50);
+    box-shadow: 0px 0px 8px rgba(114, 9, 183, 0.4);
+}
+
+/* Botão estilizado */
+.btn-primary {
+    background: var(--color-purple-50);
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efeito hover no botão */
+.btn-primary:hover {
+    background: var(--color-purple-200);
+    transform: scale(1.05);
+}
+
+/* Ajuste para responsividade */
+@media (max-width: 500px) {
+    .card {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}
